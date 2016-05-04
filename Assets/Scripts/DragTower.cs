@@ -80,10 +80,12 @@ public class DragTower : MonoBehaviour {
        	screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 		//updateMoney ();
 		if (!isEnoughMoney ()) {
-			Destroy (gameObject);
+			//Destroy (gameObject);
+			selfDestruction = true;
 			isEnoughMoneyVar = false;
 		} else
 		{
+			selfDestruction = false;
 			isEnoughMoneyVar = true;
 		}
     }
@@ -160,12 +162,18 @@ public class DragTower : MonoBehaviour {
 		}
 		position = new MyPoint (Round (transform.position.x), Round (transform.position.y));
 
-		if (isDragged || !isEnoughMoneyVar) {
+		if (isDragged) {
 			gameObject.GetComponent<TowerEffectArea>().effectArea.SetActive(false);
 			gameObject.GetComponent<TowerEffectArea>().effectAreaError.SetActive(false);
 
 		} else if(isEnoughMoneyVar){
 			setEffectArea (position);
+		}
+		if (!isEnoughMoneyVar) {
+			gameObject.GetComponent<TowerEffectArea> ().effectArea.SetActive (false);
+			gameObject.GetComponent<TowerEffectArea> ().effectAreaError.SetActive (false);
+		} else {
+			
 		}
 	}
 
@@ -193,6 +201,7 @@ public class DragTower : MonoBehaviour {
 
 		int money = GameObject.Find("Main Camera").GetComponent<MoneyCount>().money;
 		GameObject.Find ("Main Camera").GetComponent<MoneyCount> ().updateMoney (-(int)towerCost);
+
 	}
 
 	//return true if this place can not placed
