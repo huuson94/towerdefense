@@ -11,6 +11,7 @@ public class MoneyCount : MonoBehaviour {
 	void Start () {
 		_guiText = GameObject.Find ("MoneyTxt").GetComponent<GUIText>();
 		_guiText.text = "$ " + money;
+		SetCanSelectTower ();
 	}
 	
 	// Update is called once per frame
