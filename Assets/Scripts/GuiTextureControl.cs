@@ -9,7 +9,7 @@ public class GuiTextureControl : MonoBehaviour {
 	public GameObject tower;						// Tower generation
 	public bool flag = false;
 	public bool canPlaceTower = false;
-	public GameObject money; // TODO: get the money from the screen here :3
+	//public GameObject money; // TODO: get the money from the screen here :3
 	public AudioSource buttonClicked;
 
 	// Use this for initialization

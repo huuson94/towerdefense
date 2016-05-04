@@ -5,6 +5,8 @@ public class MoneyCount : MonoBehaviour {
 	
 	public int money = 1000;
 	public GUIText _guiText;
+
+	//public GameObject[] towers;
 	// Use this for initialization
 	void Start () {
 		_guiText = GameObject.Find ("MoneyTxt").GetComponent<GUIText>();
@@ -24,6 +26,24 @@ public class MoneyCount : MonoBehaviour {
 	public void updateMoney(int changeMoney) {
 		if (money + changeMoney >= 0) {
 			money += changeMoney;
+		}
+		SetCanSelectTower ();
+	}
+
+	private void SetCanSelectTower(){
+		GameObject[] towerButtons = GameObject.FindGameObjectsWithTag ("TowerButton");
+		foreach(GameObject towerButton in towerButtons){
+			float towerCost = towerButton.GetComponent<GuiTextureControl> ().tower.GetComponent<DragTower> ().towerCost;
+			if ((float)money < towerCost) {
+				Color colorT = towerButton.GetComponent<GUITexture> ().color;
+				colorT.a = 0.16f;
+				towerButton.GetComponent<GUITexture> ().color = colorT;
+				//towerButton.set
+			} else {
+				Color colorT = towerButton.GetComponent<GUITexture> ().color;
+				colorT.a = 1f;
+				towerButton.GetComponent<GUITexture> ().color = colorT;
+			}
 		}
 	}
 }
