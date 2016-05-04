@@ -12,7 +12,7 @@ public class EnemyMovement : MonoBehaviour {
 	public bool isSlow = false;
 	public GameObject slowEffectInstance;
 	public string object_name;
-
+	public int score;
 	// Use this for initialization
 	void Start () 
 	{
@@ -48,6 +48,7 @@ public class EnemyMovement : MonoBehaviour {
                 Destroy(other.gameObject);
 
 				updateMoney();
+				updateScore ();
             }
         }
 
@@ -69,6 +70,12 @@ public class EnemyMovement : MonoBehaviour {
 		}
 		if(this.gameObject.name == "Zombie_hard(Clone)") {
 			GameObject.Find ("Main Camera").GetComponent<MoneyCount> ().updateMoney (50);
+		}
+	}
+
+	private void updateScore(){
+		if (score > 0) {
+			GameObject.Find ("Main Camera").GetComponent<ScoreManage> ().updateScore (gameObject.GetComponent<EnemyMovement>().score);
 		}
 	}
 
