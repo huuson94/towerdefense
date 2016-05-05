@@ -20,14 +20,14 @@ public class Map1Script : MonoBehaviour {
 	private void createVerticalLineBlock(float start, float end, float hori){
 		float i = -100;
 		for (i = start; i <= end; i++) {
-			addBlockCell (i, hori);
+			addBlockCell (hori, i);
 		}	
 	}
 
 	private void createHorizontalLineBlock(float start, float end, float vert){
 		float i = -100;
 		for (i = start; i <= end; i++) {
-			addBlockCell (vert, i);
+			addBlockCell (i, vert);
 		}	
 	}
 
@@ -35,18 +35,18 @@ public class Map1Script : MonoBehaviour {
 		float i = -8f;
 		float j = -4f;
 
-		createVerticalLineBlock (-9, -5, -2);
-		createVerticalLineBlock (-9, -5, -3);
-		createHorizontalLineBlock (-3, 1, -4);
-		createHorizontalLineBlock (-3, 1, -5);
-		createVerticalLineBlock (-4, -1, 1);
-		createVerticalLineBlock (-1, 2, 2);
-		createVerticalLineBlock (2, 6, 3);
-		createVerticalLineBlock (2, 6, 4);
-		createHorizontalLineBlock (-1, 3, 5);
-		createHorizontalLineBlock (-1, 3, 6);
-		createVerticalLineBlock (6, 8, 0);
-		createVerticalLineBlock (6, 8, -1);
+		createHorizontalLineBlock (-9, -5, -2);
+		createHorizontalLineBlock (-9, -5, -3);
+		createVerticalLineBlock (-3, 1, -4);
+		createVerticalLineBlock (-3, 1, -5);
+		createHorizontalLineBlock (-4, -1, 1);
+		createHorizontalLineBlock (-1, 2, 2);
+		createHorizontalLineBlock (2, 6, 3);
+		createHorizontalLineBlock (2, 6, 4);
+		createVerticalLineBlock (-1, 3, 5);
+		createVerticalLineBlock (-1, 3, 6);
+		createHorizontalLineBlock (6, 8, 0);
+		createHorizontalLineBlock (6, 8, -1);
 		//add trees
 		addBlockCell (-7f, 2f);
 		addBlockCell (-5f, 4f);
