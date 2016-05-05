@@ -55,6 +55,11 @@ public class Map1Script : MonoBehaviour {
 		addBlockCell (2f, -1f);
 		addBlockCell (3f, -3f);
 		addBlockCell (8f, 2f);
+		//add info, button
+		createHorizontalLineBlock (-9f, 5f, -4f);
+		createHorizontalLineBlock (-9f, 5f, -5f);
+		createHorizontalLineBlock (-5f, 5f, 4f);
+		createHorizontalLineBlock (-5f, 5f, 5f);
 	}
 }
 

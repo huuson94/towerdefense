@@ -59,5 +59,10 @@ public class Map3Script : MonoBehaviour {
 		addBlockCell (-5f, -1f);
 		addBlockCell (5f, -1f);
 		addBlockCell (5f, 3f);
+		//add info, button
+		createHorizontalLineBlock (-9f, 5f, -4f);
+		createHorizontalLineBlock (-9f, 5f, -5f);
+		createHorizontalLineBlock (-5f, 5f, 4f);
+		createHorizontalLineBlock (-5f, 5f, 5f);
 	}
 }

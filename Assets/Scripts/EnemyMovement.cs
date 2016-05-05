@@ -13,6 +13,7 @@ public class EnemyMovement : MonoBehaviour {
 	public GameObject slowEffectInstance;
 	public string object_name;
 	public int score;
+	public int money;
 	// Use this for initialization
 	void Start () 
 	{
@@ -63,13 +64,13 @@ public class EnemyMovement : MonoBehaviour {
 
 	private void updateMoney() {
 		if(this.gameObject.name == "Enemy(Clone)") {
-			GameObject.Find ("Main Camera").GetComponent<MoneyCount> ().updateMoney (20);
+			GameObject.Find ("Main Camera").GetComponent<MoneyCount> ().updateMoney (money);
 		}
 		if(this.gameObject.name == "Zombie_easy(Clone)") {
-			GameObject.Find ("Main Camera").GetComponent<MoneyCount> ().updateMoney (20);
+			GameObject.Find ("Main Camera").GetComponent<MoneyCount> ().updateMoney (money);
 		}
 		if(this.gameObject.name == "Zombie_hard(Clone)") {
-			GameObject.Find ("Main Camera").GetComponent<MoneyCount> ().updateMoney (50);
+			GameObject.Find ("Main Camera").GetComponent<MoneyCount> ().updateMoney (money);
 		}
 	}
 
